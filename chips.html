@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .coming-soon-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+  }
+
+  .coming-soon-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .coming-soon-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .coming-soon-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .countdown {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f39c12;
+    margin-bottom: 20px;
+  }
+</style>
+<title>Coming Soon</title>
+</head>
+<body>
+  <div class="coming-soon-container">
+    <img class="coming-soon-image" src="img/soon.jpg" alt="Coming Soon">
+    <h1 class="coming-soon-heading">Coming Soon</h1>
+    <p class="coming-soon-description">We're working hard to bring you something amazing. Stay tuned!</p>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <script>
+    // Set the date you're counting down to
+    const countDownDate = new Date("Dec 1, 2023 00:00:00").getTime();
+
+    // Update the countdown every 1 second
+    const countdownInterval = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

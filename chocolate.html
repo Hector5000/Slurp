@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow: hidden;
+  }
+
+  .marquee-container {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    overflow: hidden;
+    width: 80%; /* Set the desired width with spacing */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
+  .marquee-content {
+    display: flex;
+  }
+
+  .marquee-item {
+    max-width: 100%;
+    height: auto;
+    background-color: #ccc;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+<title>Image Marquee</title>
+</head>
+<body>
+  <div class="marquee-container">
+    <div class="marquee-content" id="marqueeContent">
+      <div class="marquee-item" style="background-image: url('img/marq1.png');"></div>
+      <div class="marquee-item" style="background-image: url('img/marq2.jpg');"></div>
+      <div class="marquee-item" style="background-image: url('img/marq3.jpg');"></div>
+      <div class="marquee-item" style="background-image: url('img/marq4.jpg');"></div>
+      <div class="marquee-item" style="background-image: url('img/marq6.png');"></div>
+      <div class="marquee-item" style="background-image: url('img/marq7.jpg');"></div>
+      <div class="marquee-item" style="background-image: url('img/marq8.jpg');"></div>
+      <div class="marquee-item" style="background-image: url('img/marq14.png');"></div>
+    </div>
+  </div>
+  <script>
+    const marqueeContent = document.getElementById("marqueeContent");
+
+    // Clone and append images to create a seamless loop
+    const originalImages = marqueeContent.innerHTML;
+    marqueeContent.innerHTML += originalImages;
+  </script>
+</body>
+</html>
