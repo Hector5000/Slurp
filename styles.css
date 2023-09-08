@@ -3,6 +3,13 @@
     padding: 0;
     
 }
+
+/* body{
+    animation-name: exaple;
+    animation-duration: 7s;
+    animation-iteration-count: 123;
+} */
+
 /* Reset some default styles for list items */
 ul, li {
     list-style: none;
@@ -17,10 +24,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 6px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px 8px rgba(215, 101, 2, 0.299);
     margin: 5px;
     margin-left: 10px;
     margin-right: 10px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
 }
 
 /* Style for the logo and name */
@@ -66,12 +76,23 @@ nav a:hover {
     padding-top: 10px;
     position: relative;
     text-align: center;
-    z-index: 2;
+    z-index: 1;
+   
+    
 }
+/* @keyframes exaple {
+    0%   {background-color: red;}
+    20%  {background-color: yellow;}
+    40%  {background-color: blue;}
+    60% {background-color: green;}
+    100% {background-color: white;}
+  } */
 
 .banner img {
     width: 100%;
     max-height: 400px; /* Adjust this as needed */
+    margin-top: 80px;
+    z-index: 1;
 }
 
 .banner-text {
@@ -83,7 +104,15 @@ nav a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    animation-name: bann;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
 }
+
+@keyframes bann {
+    from {top: 0px;}
+    to {top: 300px; }
+  }
 
 .banner-text h2 {
     font-size: 36px;
@@ -104,6 +133,7 @@ nav a:hover {
     font-size: 16px;
     text-decoration: none;
     transition: background-color 0.3s;
+    margin-top: 30px;
 }
 
 .banner-button:hover {
@@ -185,11 +215,13 @@ nav a:hover {
     align-items: center;
     padding: 50px;
     padding: 30px;
+    
 }
 
 .about-content {
     flex: 1;
     padding-right: 40px;
+    margin-top: 80px;
 }
 
 .about h2 {
@@ -230,6 +262,10 @@ nav a:hover {
     max-width: 300px;
     padding: 20px;
     text-align: center;
+  }
+.testimonial-card :hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease-in-out;
   }
 
   .testimonial-image {
@@ -311,6 +347,13 @@ nav a:hover {
     
 }
 
+    
+
+
+.twine{
+    margin-top: 80px;
+}
+
 
 .category-container {
     display: flex;
@@ -319,6 +362,8 @@ nav a:hover {
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 30px;
+   
+    
 }
 
 .category {
@@ -328,6 +373,12 @@ nav a:hover {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
    width: 100%;
+   margin-top: 80px;
+    
+}
+.category :hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease-in-out;
 }
 
 .category img {
@@ -373,6 +424,7 @@ nav a:hover {
 .blog {
     text-align: center;
     padding: 50px;
+    
 }
 
 .post {
@@ -381,6 +433,7 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
+    margin-top: 80px;
 }
 
 .post img {
@@ -472,6 +525,9 @@ nav a:hover {
     overflow: hidden;
     margin: 0 auto 10px;
 }
+.image-container :hover {
+    filter: brightness(0.6);
+}
 
 .image-container img {
     width: 100%;
@@ -479,6 +535,7 @@ nav a:hover {
     object-fit: cover;
     border-radius: 50%;
 }
+
 
 .team-member h3 {
     font-size: 18px;
@@ -796,6 +853,7 @@ footer {
 .complementary {
     text-align: center;
     padding: 50px 0;
+    
 }
 
 .circular-image img {
@@ -803,6 +861,11 @@ footer {
     height: 150px;
     border-radius: 50%;
     border: 5px solid #ff8800;
+    margin-top: 80px;
+}
+.circular-image :hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease-in-out;
 }
 .complementary-text {
     text-align: center;
@@ -831,7 +894,17 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 4;
+}
+
+@media screen and (max-width: 768px) {
+    .warn {
+        width: 90%;
+        
+    }
+    .close-button{
+        width: 10%;
+    }
 }
 
 .popup-content {
@@ -843,6 +916,7 @@ footer {
     border-radius: 10px;
     padding: 20px;
     position: relative;
+    z-index: 4;
 }
 
 .popup-text {
@@ -851,6 +925,7 @@ footer {
     margin-top: 10px;
     font-family: 'Times New Roman';
     text-align: center;
+    z-index: 4;
 }
 
 .close-button {
@@ -865,6 +940,14 @@ footer {
     cursor: pointer;
     width: 3%;
     height: 5%;
+}
+
+@media screen and (max-width:800px){
+    .close-button {
+        
+        width: 10%;
+        height: 5%;
+    }
 }
 
 .popup-image {
@@ -895,3 +978,163 @@ footer {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 40px;
   }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Styles for the pop-up container */
+.popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 40%;
+    margin-top: 120px;
+    margin-left: 30%;
+    z-index: 22;
+}
+
+/* Styles for the close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    background-color: #e66200;
+    margin-top: 120px;
+    border-radius: 5%;
+}
+
+
+/* animation time */
+/* Header Animation */
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s; /* Add transition for color and transform */
+}
+
+nav a:hover {
+    color: #e66200;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px); /* Rotate and translate bars to create a close icon */
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar when the menu is active */
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px); /* Rotate and translate bars to create a close icon */
+}
+
+.gallery-item:hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease-in-out;
+}
+
+.popup-overlay {
+    /* Existing styles */
+
+    /* Add animation properties */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup-content {
+    /* Existing styles */
+
+    /* Add animation properties */
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Show the popup */
+.popup-overlay.active {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction with the popup */
+}
+
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+}
+
+/* Hide the popup */
+.close-button {
+    /* Existing styles */
+
+    /* Add animation properties */
+    transition: transform 0.3s ease-in-out;
+}
+
+.close-button:hover {
+    transform: scale(1.1);
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.video-card {
+    width: 30%; /* Adjust the width as needed */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.video {
+    width: 100%;
+}
+/* Default styles for larger screens */
+.video-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.video-card {
+width: 30%; /* Adjust the width as needed */
+margin-bottom: 20px;
+border: 1px solid #ccc;
+padding: 10px;
+text-align: center;
+}
+
+.video {
+width: 100%;
+height: 80%;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+.video-card {
+width: 100%; /* Set to full width for smaller screens */
+}
+}
+
+.video-pack{
+    margin: 12px;
+}

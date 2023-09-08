@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <link rel="icon" type="image/x-icon" href="img/popcorn_1813130.png">
+    <style>
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #loginForm {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <center><h1>Error <br>Page Still in Construction</h1></center>
+    </div>
+    <h1>Admin Login</h1>
+    <form id="loginForm" action="login.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        // Get references to form elements
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        // Add submit event listener to the form
+        loginForm.addEventListener('submit', function (event) {
+            // Prevent the form from submitting to the server for demonstration
+            event.preventDefault();
+
+            // Retrieve entered values
+            const enteredUsername = usernameInput.value;
+            const enteredPassword = passwordInput.value;
+
+            // Perform basic client-side validation (you should use server-side validation)
+            if (enteredUsername === 'admin' && enteredPassword === 'password') {
+                alert('Login successful!'); // Replace with your login logic
+                // You can also redirect the user to another page after successful login.
+            } else {
+                alert('Wrong username or password.');
+            }
+        });
+    </script>
+</body>
+</html>

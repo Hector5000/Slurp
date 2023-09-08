@@ -82,36 +82,34 @@ function startCounting(counterElement) {
     }, 100);
 }
 
+// Get references to the pop-up and buttons
+const imagePopup = document.getElementById('imagePopup');
+const showPopupButton = document.getElementById('showPopup');
+const closePopupButton = document.getElementById('closePopup');
 
-// others order
-// to bring out the space to write other orders
+// Show the pop-up when the "Show Pop-up" button is clicked
+showPopupButton.addEventListener('click', () => {
+    imagePopup.style.display = 'block';
+});
 
-const itemSelect = document.getElementById("item");
-const customItemInput = document.querySelector(".custom-item-input");
-
-itemSelect.addEventListener("change", function () {
-    if (itemSelect.value === "other") {
-        customItemInput.style.display = "block";
-    } else {
-        customItemInput.style.display = "none";
-    }
+// Close the pop-up when the close button is clicked
+closePopupButton.addEventListener('click', () => {
+    imagePopup.style.display = 'none';
 });
 
 
+// video blog
+// 
+const videos = document.querySelectorAll('.video');
+  
+videos.forEach((video) => {
+    video.addEventListener('click', () => {
+        // Remove active class from all videos
+        videos.forEach((v) => {
+            v.classList.remove('active');
+        });
 
-
-// pop up fuction
-// this makes the pop up in the index to show
-
-document.addEventListener("DOMContentLoaded", function() {
-    const popupOverlay = document.getElementById('popupOverlay');
-    popupOverlay.style.display = 'flex';
+        // Add active class to the clicked video
+        video.classList.add('active');
+    });
 });
-
-function closePopup() {
-    const popupOverlay = document.getElementById('popupOverlay');
-    popupOverlay.style.display = 'none';
-}
-
-
-
